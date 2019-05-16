@@ -1,0 +1,7 @@
+{
+  "name": "appAmigoSecreto",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

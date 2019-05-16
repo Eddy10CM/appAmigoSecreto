@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>AMIGO SECRETO</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col col-10>
+        <ion-item>
+          <ion-label>Gustos</ion-label>
+          <ion-input type="text" [(ngModel)]="gusto"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button icon-only color="secondary" (click)="add()" style="border-radius: 18px">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of list">
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-10>
+              {{item}}
+            </ion-col>
+            <ion-col col-2>
+              <ion-icon name="ios-arrow-back-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="delete(item)">
+          <ion-icon name="trash"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <button ion-button block (click)="next()">Siguiente</button>
+</ion-content>
