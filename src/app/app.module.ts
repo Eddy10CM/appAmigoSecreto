@@ -11,6 +11,7 @@ import { RegistroPage } from '../pages/registro/registro';
 import { InfogustosPage } from '../pages/infogustos/infogustos';
 import { GustosPage } from '../pages/gustos/gustos';
 import { DisgustosPage } from '../pages/disgustos/disgustos';
+import { FelicidadesPage } from '../pages/felicidades/felicidades';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DisgustosPage } from '../pages/disgustos/disgustos';
     RegistroPage,
     InfogustosPage,
     GustosPage,
-    DisgustosPage
+    DisgustosPage,
+    FelicidadesPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { DisgustosPage } from '../pages/disgustos/disgustos';
     RegistroPage,
     InfogustosPage,
     GustosPage,
-    DisgustosPage
+    DisgustosPage,
+    FelicidadesPage
   ],
   providers: [
     StatusBar,

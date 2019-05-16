@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the DisgustosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FelicidadesPage } from '../felicidades/felicidades';
 
 @Component({
   selector: 'page-disgustos',
@@ -40,7 +34,7 @@ export class DisgustosPage {
   }
 
   next(){
-    //this.navCtrl.push(DisgustosPage);
+    this.navCtrl.push(FelicidadesPage);
   }
 
 }
