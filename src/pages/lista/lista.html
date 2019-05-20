@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>AMIGO SECRETO</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="listaChatCompatibles">
+    <ion-segment-button value="compatibles">
+      Compatibles
+    </ion-segment-button>
+    <ion-segment-button value="chats">
+      Chats
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content padding>
+  <div [ngSwitch]="listaChatCompatibles">
+    <ion-list *ngSwitchCase="'compatibles'">
+    <ion-item *ngFor="let item of compatibles">
+      <ion-avatar item-start>
+        <img src="assets/img/avatar-ts-bullseye.png">
+      </ion-avatar>
+      <h2>Compatibilidad</h2>
+      <h3>{{item.compatibilidad}}</h3>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'chats'">
+    <ion-item *ngFor="let chat of chats">
+      <ion-avatar item-start>
+        <img src="img/thumbnail-kitten-1.jpg">
+      </ion-avatar>
+      <h2>{{chat.apodo}}</h2>
+      <h3>{{chat.ultimoMensaje}}</h3>
+    </ion-item>
+  </ion-list>
+  </div>
+</ion-content>
