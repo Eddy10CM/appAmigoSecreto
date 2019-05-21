@@ -16,10 +16,10 @@
   <div [ngSwitch]="listaChatCompatibles">
     <ion-list *ngSwitchCase="'compatibles'">
     <ion-item *ngFor="let item of compatibles">
-      <ion-avatar item-start>
+      <ion-avatar item-start (click)="openInfo()" >
         <img src="assets/img/avatar-ts-bullseye.png">
       </ion-avatar>
-      <div (click)="openChat()">
+      <div (click)="openChat(item)">
         <h2>Compatibilidad</h2>
         <h3>{{item.compatibilidad}}</h3>
       </div>

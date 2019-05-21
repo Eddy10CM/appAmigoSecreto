@@ -15,6 +15,11 @@ import { FelicidadesPage } from '../pages/felicidades/felicidades';
 import { ListaPage } from '../pages/lista/lista';
 import { InfochatPage } from '../pages/infochat/infochat';
 import { ChatPage } from '../pages/chat/chat';
+import { GlobalProvider } from '../providers/global/global';
+import { DatabaseProvider } from '../providers/database/database';
+
+import { SQLite } from '@ionic-native/sqlite';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ import { ChatPage } from '../pages/chat/chat';
     FelicidadesPage,
     ListaPage,
     InfoPage,
-    ChatPage
+    ChatPage,
+    InfochatPage
   ],
   imports: [
     BrowserModule,
@@ -46,12 +52,16 @@ import { ChatPage } from '../pages/chat/chat';
     FelicidadesPage,
     ListaPage,
     InfoPage,
-    ChatPage
+    ChatPage,
+    InfochatPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalProvider,
+    DatabaseProvider,
+    SQLite
   ]
 })
 export class AppModule {}

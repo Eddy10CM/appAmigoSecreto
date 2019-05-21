@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DisgustosPage } from '../disgustos/disgustos';
-
+import { DatabaseProvider } from '../../providers/database/database';
 
 @Component({
   selector: 'page-gustos',
@@ -11,8 +11,10 @@ export class GustosPage {
 
   list = [];
   gusto:string;
+  idUsuario:number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private db:DatabaseProvider) {
+    this.idUsuario = navParams.get("id");
   }
 
   ionViewDidLoad() {
@@ -34,6 +36,13 @@ export class GustosPage {
   }
 
   next(){
-    this.navCtrl.push(DisgustosPage);
+    //this.navCtrl.push(DisgustosPage);
+    for(var x in this.list){
+      this.db.insertGustos(this.list[x],this.idUsuario).then((response)=>{
+        console.log("Response",response);
+      }).catch((error)=>{
+        console.error(error);
+      })
+    }
   }
 }

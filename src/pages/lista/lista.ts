@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChatPage } from '../chat/chat';
+import { InfochatPage } from '../infochat/infochat';
 
 @Component({
   selector: 'page-lista',
@@ -11,12 +12,33 @@ export class ListaPage {
   compatibles = [{
     'compatibilidad': '99%',
     'img': "",
+    'chat': [{
+      'apodo': "Apodo1",
+      'mensajes': [{
+        'mensaje:': "Que cuentas"
+      },{
+        'mensaje:': "Que cuentas"
+      },{
+        'mensaje:': "Que cuentas"
+      },{
+        'mensaje:': "Que cuentas"
+      }],
+      'ultimoMensaje': 'Hola'
+    }],
   },{
     'compatibilidad': '98%',
     'img': "",
   },{
     'compatibilidad': '60%',
     'img': "",
+    'chat': [{
+      'apodo': "Apodo2",
+      'mensajes': [{
+        'recibido:': "Que cuentas",
+        'enviado': ""
+      }],
+      'ultimoMensaje': 'jajaja'
+    }]
   },{
     'compatibilidad': '75%',
     'img': "",
@@ -25,44 +47,7 @@ export class ListaPage {
     'img': "",
   }];
 
-  chats = [{
-    'apodo': "Apodo1",
-    'mensajes': [{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    }],
-    'ultimoMensaje': 'Hola'
-  },
-  {
-    'apodo': "Apodo2",
-    'mensajes': [{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    }],
-    'ultimoMensaje': 'jajaja'
-  },{
-    'apodo': "Apodo1",
-    'mensajes': [{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    },{
-      'mensaje:': "Que cuentas"
-    }],
-    'ultimoMensaje': 'Que haces'
-  }];
+  chats = [];
 
   listaChatCompatibles: string = "compatibles";
 
@@ -73,7 +58,12 @@ export class ListaPage {
     console.log('ionViewDidLoad ListaPage');
   }
 
-  openChat(){
-    this.navCtrl.push(ChatPage);
+  openChat(infoChat){
+    console.log(infoChat);
+    this.navCtrl.push(ChatPage,{'chat': infoChat});
+  }
+
+  openInfo(){
+    this.navCtrl.push(InfochatPage);
   }
 }

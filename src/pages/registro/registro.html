@@ -14,32 +14,32 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Nombre:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="nombre"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Edad:</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="edad"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Ciudad:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="ciudad"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Email:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="correo"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Contraseña:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Verificar contraseña:</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="password" [(ngModel)]="verificarpassword"></ion-input>
     </ion-item>
   </ion-list>
   <button ion-button block color="primary" (click)="saveData()">Siguiente</button>
