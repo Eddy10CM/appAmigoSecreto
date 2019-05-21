@@ -14,6 +14,7 @@ import { DisgustosPage } from '../pages/disgustos/disgustos';
 import { FelicidadesPage } from '../pages/felicidades/felicidades';
 import { ListaPage } from '../pages/lista/lista';
 import { InfochatPage } from '../pages/infochat/infochat';
+import { ChatPage } from '../pages/chat/chat';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { InfochatPage } from '../pages/infochat/infochat';
     DisgustosPage,
     FelicidadesPage,
     ListaPage,
-    InfoPage
+    InfoPage,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ import { InfochatPage } from '../pages/infochat/infochat';
     DisgustosPage,
     FelicidadesPage,
     ListaPage,
-    InfoPage
+    InfoPage,
+    ChatPage
   ],
   providers: [
     StatusBar,

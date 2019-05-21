@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ListaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ChatPage } from '../chat/chat';
 
 @Component({
   selector: 'page-lista',
@@ -79,4 +73,7 @@ export class ListaPage {
     console.log('ionViewDidLoad ListaPage');
   }
 
+  openChat(){
+    this.navCtrl.push(ChatPage);
+  }
 }
